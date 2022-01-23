@@ -11,7 +11,6 @@ miro.onReady(async () => {
 
     const enabled = localStorage.getItem(config.storageKeys.settings.miroPluginTagCrawlerEnabled) === "true";
     if (!enabled) {
-      console.log("Tag Crawler is disabled");
       return;
     }
 
@@ -31,6 +30,9 @@ miro.onReady(async () => {
         const otherWidget = await miro.board.widgets.get({ id: otherWidgetId });
         if (otherWidget.length < 1) continue;
 
+        const storedColor = localStorage.getItem(config.storageKeys.settings.miroPluginTagCrawlerColor);
+        const lineColor = storedColor === "multi" ? widgetTag.color : `#${colorMap[storedColor]}`;
+
         await miro.board.widgets.create({
           type: "LINE",
           startWidgetId: selectedWidget.id,
@@ -42,7 +44,7 @@ miro.onReady(async () => {
             } as IMeta,
           },
           style: {
-            lineColor: `#${colorMap[localStorage.getItem(config.storageKeys.settings.miroPluginTagCrawlerColor)]}`,
+            lineColor,
             lineEndStyle: miro.enums.lineArrowheadStyle.NONE,
             lineStartStyle: miro.enums.lineArrowheadStyle.NONE,
             lineStyle: miro.enums.lineStyle.NORMAL,

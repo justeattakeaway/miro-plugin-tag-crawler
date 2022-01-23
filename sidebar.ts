@@ -11,7 +11,6 @@ miro.onReady(() => {
     },
     methods: {
       setColor: async function (color: string) {
-        console.log("Setting color", { color });
 
         // todo: colors not updating. Reported: https://community.miro.com/developer-platform-and-apis-57/widget-style-changes-ignored-in-update-function-7089
         // const allLines = await miro.board.widgets.get({ type: "line" });

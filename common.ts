@@ -5,11 +5,9 @@ export async function clearLines() {
   const allLines = await miro.board.widgets.get({ type: "line" });
   const tagCrawlerLines = allLines.filter((l) => (l.metadata[config.clientId] as IMeta)?.isTagCrawlerLine);
 
-  console.log("Clearing lines", { count: tagCrawlerLines.length });
   for (let lineWidget of tagCrawlerLines) {
     await miro.board.widgets.deleteById(lineWidget.id);
   }
-  console.log("Cleared lines");
 }
 
 export async function getWidgetTags(widgetId: string) {
@@ -17,7 +15,7 @@ export async function getWidgetTags(widgetId: string) {
   return tags.filter((t) => t.widgetIds.includes(widgetId)).filter((t) => !t.title.startsWith("."));
 }
 
-export const colors = ["yellow", "green", "red", "blue", "black"];
+export const colors = ["yellow", "green", "red", "blue", "black", "multi"];
 export const colorMap: { [key: string]: string } = {
   yellow: "ffd02f",
   green: "77cc66",

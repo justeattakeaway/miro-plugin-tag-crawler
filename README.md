@@ -15,4 +15,3 @@ Tag Crawler is not available on Miro marketplace yet.
 * [ ] Update color of lines immediately on change. Blocked by a [report bug](https://community.miro.com/developer-platform-and-apis-57/widget-style-changes-ignored-in-update-function-7089)
 * [ ] Publish to Miro marketplace.
 * [ ] Add links to Code of Conduct, License & Contribution Guide.
-* [ ] Use the colour of the tag for the connecting line.
