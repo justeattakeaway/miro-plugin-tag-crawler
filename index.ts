@@ -20,6 +20,8 @@ miro.onReady(async () => {
     const widgetTags = await getWidgetTags(selectedWidget.id);
 
     const alreadyLinked: string[] = [];
+    const lineWidgets: SDK.WidgetToBeCreated[] = [];
+
     for (let widgetTag of widgetTags) {
       const otherWidgetIds = widgetTag.widgetIds.filter((id) => id !== selectedWidget.id);
 
@@ -33,7 +35,7 @@ miro.onReady(async () => {
         const storedColor = localStorage.getItem(config.storageKeys.settings.miroPluginTagCrawlerColor);
         const lineColor = storedColor === "multi" ? widgetTag.color : `#${colorMap[storedColor]}`;
 
-        await miro.board.widgets.create({
+        lineWidgets.push({
           type: "LINE",
           startWidgetId: selectedWidget.id,
           endWidgetId: otherWidgetId,
@@ -51,9 +53,11 @@ miro.onReady(async () => {
             lineThickness: 2,
             lineType: miro.enums.lineType.ARROW,
           },
-        } as SDK.ILineWidget);
+        });
       }
     }
+
+    await miro.board.widgets.create(lineWidgets);
   });
 
   miro.initialize({
