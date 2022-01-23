@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/mirotone/dist/styles.css" />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #mn_app {
+        height: 100%;
+        overflow-y: auto;
+      }
+
+      .color-picker {
+        width: 18px;
+        height: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 1px;
+        vertical-align: middle;
+        position: relative;
+      }
+      .color-picker-inner {
+        width: 14px;
+        height: 14px;
+        box-sizing: border-box;
+        border: 2px solid white;
+        border-radius: 7px;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+      }
+      .color-picker-yellow {
+        background-color: #ffd02f;
+      }
+      .color-picker-green {
+        background-color: #77cc66;
+      }
+      .color-picker-red {
+        background-color: #e15454;
+      }
+      .color-picker-blue {
+        background-color: #4262ff;
+      }
+      .color-picker-black {
+        background-color: #000000;
+      }
+
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+
+    <%= htmlWebpackPlugin.tags.headTags %>
+  </head>
+  <body>
+    <div id="mn_app" style="padding: 10px">
+      <div id="mn_app_content" v-cloak>
+        <h1 class="h1">Tag Crawler</h1>
+
+        <h3 class="h3">Line color: {{ activeColor }}</h3>
+        <span
+          v-for="color in colors"
+          :key="color"
+          class="color-picker"
+          :class="[color == activeColor ? 'color-picker-' + color : '']"
+          @click="setColor(color)"
+        >
+          <span class="color-picker-inner" :class="'color-picker-' + color"></span>
+        </span>
+
+        <hr />
+        <label class="toggle">
+          <input type="checkbox" tabindex="0" v-model="enabled" @change="toggle($event)" />
+          <span>{{ enabled ? "Enabled" : "Disabled"}}</span>
+        </label>
+      </div>
+    </div>
+    <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <%= htmlWebpackPlugin.tags.bodyTags %>
+  </body>
+</html>
