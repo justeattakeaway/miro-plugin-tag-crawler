@@ -1,0 +1,1 @@
+Please refer to https://github.com/justeattakeaway/Resources/blob/main/CODE_OF_CONDUCT.md
