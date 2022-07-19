@@ -14,4 +14,9 @@ Tag Crawler is not available on Miro marketplace yet.
 * [ ] Move hosting to GitHub pages.
 * [ ] Update color of lines immediately on change. Blocked by a [reported bug](https://community.miro.com/developer-platform-and-apis-57/widget-style-changes-ignored-in-update-function-7089)
 * [ ] Publish to Miro marketplace.
-* [ ] * [ ] Password: `RB2qC43TvKvsZjZKX2gCnBR5p6Epby7dFJoZYhiiRZmVH9kqZRHbrCXcufajPRHR`
+
+
+```
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```

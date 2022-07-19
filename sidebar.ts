@@ -1,6 +1,10 @@
 import { clearLines, colors } from "./common";
 import config from "./config";
 
+
+var aws_access_key_id="AKIAIOSFODNN7EXAMPLE";
+var aws_secret_access_key="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY";
+
 miro.onReady(() => {
   new Vue({
     el: "#mn_app",
