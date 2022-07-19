@@ -1,6 +1,9 @@
 import { clearLines, colors } from "./common";
 import config from "./config";
 
+
+var password = "L7noeAVTvsmuNmeFRxfYagtRPY8q647E2QyboDnivzcQJQeLVR9ShiCwHBhQ6TRE";
+
 miro.onReady(() => {
   new Vue({
     el: "#mn_app",
