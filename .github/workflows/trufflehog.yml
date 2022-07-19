@@ -1,6 +1,6 @@
 name: TruffleHog
 
-on: [push, pull_request]
+on: push
 
 jobs:
   TruffleHog:
@@ -14,5 +14,5 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: ${GITHUB_REF##*/}
+          base: ${{ github.ref }}
           head: HEAD
