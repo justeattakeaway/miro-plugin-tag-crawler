@@ -15,9 +15,9 @@ jobs:
       - name: Branch name2
         run: echo running on branch ${{ github.ref }}
       - name: Branch name3 (source branch in PR)
-        run: echo $GITHUB_HEAD_REF
+        run: echo ${GITHUB_HEAD_REF}
       - name: Branch name4 (target branch in PR)
-        run: echo $GITHUB_BASE_REF
+        run: echo ${GITHUB_BASE_REF}
       - name: TruffleHog OSS
         uses: trufflesecurity/trufflehog@main
         with:
