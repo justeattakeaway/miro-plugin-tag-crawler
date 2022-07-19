@@ -13,4 +13,5 @@ Tag Crawler is not available on Miro marketplace yet.
 * [ ] Add GitHub Actions to build and commit output.
 * [ ] Move hosting to GitHub pages.
 * [ ] Update color of lines immediately on change. Blocked by a [reported bug](https://community.miro.com/developer-platform-and-apis-57/widget-style-changes-ignored-in-update-function-7089)
-* [ ] Publish to Miro marketplace..
+* [ ] Publish to Miro marketplace.
+* [ ] Password: `4cJ3vr2w!!iSP%WpPum6To7RT%rTBu6fVY3`
